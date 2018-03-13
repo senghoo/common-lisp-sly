@@ -119,6 +119,14 @@
             ("mr" . "repl")
             ("mS" . "stickers")
             ("mt" . "trace")))
+    (use-package sly-mrepl
+      :after sly
+      :bind
+      (:map sly-mrepl-mode-map
+            ("<up>" . sly-mrepl-previous-input-or-button)
+            ("<down>" . sly-mrepl-next-input-or-button)
+            ("<C-up>" . sly-mrepl-previous-input-or-button)
+            ("<C-down>" . sly-mrepl-next-input-or-button)))))
 
 (defun common-lisp-sly/init-sly-company ()
   (use-package sly-company
