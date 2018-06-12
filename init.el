@@ -4,22 +4,17 @@
                 dotspacemacs-configuration-layers
                 '((auto-completion
                    :variables
-                   auto-completion-return-key-behavior 'complete
+                   ;; auto-completion-return-key-behavior 'complete
                    auto-completion-tab-key-behavior 'cycle
                    auto-completion-enable-sort-by-usage t
                    auto-completion-idle-delay nil
-                   auto-completion-enable-snippets-in-popup t
+                   auto-completion-enable-snippets-in-popup nil
                    auto-completion-enable-help-tooltip 'manual)
-                  (haskell
-                   :variables
-                   haskell-completion-backend 'intero
-                   haskell-enable-hindent-style "johan-tibell"
-                   haskell-process-type 'stack-ghci)
                   helm
                   html
                   markdown
+                  mfiano-common
                   mfiano-feeds
-                  mfiano-general
                   mfiano-git
                   mfiano-keybindings
                   mfiano-lisp
@@ -42,18 +37,14 @@
    dotspacemacs-editing-style 'vim
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner 'official
-   dotspacemacs-startup-lists '((recents . 10)
-                                (projects . 10))
+   dotspacemacs-startup-lists '((recents . 10) (projects . 10))
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'lisp-mode
    dotspacemacs-initial-scratch-message nil
    dotspacemacs-themes '(spacemacs-dark)
    dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("Iosevka Slab"
-                               :size 20
-                               :weight normal
-                               :width normal
+   dotspacemacs-default-font '("Iosevka Slab" :size 20 :weight normal :width normal
                                :powerline-scale 1.1)
    dotspacemacs-leader-key "SPC"
    dotspacemacs-emacs-command-key "SPC"
@@ -100,8 +91,4 @@
   (setq custom-file (concat user-emacs-directory "custom.el"))
   (load custom-file))
 
-(defun dotspacemacs/user-config ()
-  (company-tng-configure-default)
-  (setq-default fill-column 100)
-  (spacemacs/set-leader-keys
-    "<f13>" 'helm-M-x))
+(defun dotspacemacs/user-config ())
