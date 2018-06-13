@@ -115,7 +115,7 @@
     (mapc (lambda (x)
             (spacemacs/declare-prefix-for-mode 'lisp-mode (car x) (cdr x)))
           '(("mc" . "compile")
-            ("m" . "evaluate")
+            ("me" . "evaluate")
             ("mg" . "navigation")
             ("mh" . "help")
             ("mm" . "macro")
