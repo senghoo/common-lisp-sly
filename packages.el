@@ -34,10 +34,8 @@
       "sI" 'spacemacs/helm-sly)))
 
 (defun common-lisp-sly/pre-init-evil-cleverparens ()
-  (spacemacs|use-package-add-hook evil-cleverparens
-    :pre-init
-    (add-to-list 'evil-lisp-safe-structural-editing-modes 'lisp-mode)
-    (add-to-list 'evil-lisp-safe-structural-editing-modes 'common-lisp-mode)))
+  (add-to-list 'evil-lisp-safe-structural-editing-modes 'lisp-mode)
+  (add-to-list 'evil-lisp-safe-structural-editing-modes 'common-lisp-mode))
 
 (defun common-lisp-sly/post-init-parinfer ()
   (add-hook 'lisp-mode-hook 'parinfer-mode))
