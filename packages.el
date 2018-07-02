@@ -35,7 +35,14 @@
 
 (defun common-lisp-sly/pre-init-evil-cleverparens ()
   (add-to-list 'evil-lisp-safe-structural-editing-modes 'lisp-mode)
-  (add-to-list 'evil-lisp-safe-structural-editing-modes 'common-lisp-mode))
+  (add-to-list 'evil-lisp-safe-structural-editing-modes 'common-lisp-mode)
+  (spacemacs|use-package-add-hook evil-cleverparens
+    :post-init
+    (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
+    :post-config
+    (setq evil-move-beyond-eol t
+          evil-cleverparens-use-additional-movement-keys nil
+          evil-cleverparens-use-additional-bindings nil)))
 
 (defun common-lisp-sly/post-init-parinfer ()
   (add-hook 'lisp-mode-hook 'parinfer-mode))
@@ -117,7 +124,7 @@
             ("mg" . "navigation")
             ("mh" . "help")
             ("mm" . "macro")
-            ("mr" . "repl")
+            ("ms" . "repl")
             ("mS" . "stickers")
             ("mt" . "trace")))))
 
