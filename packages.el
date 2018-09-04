@@ -140,7 +140,7 @@
 
 (defun common-lisp-sly/post-init-company ()
   (spacemacs|add-company-backends
-    :backends (company-capf company-files)
+    :backends company-capf
     :modes sly-mode sly-mrepl-mode))
 
 (defun common-lisp-sly/init-sly-macrostep ()
