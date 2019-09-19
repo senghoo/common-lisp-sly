@@ -65,7 +65,7 @@
 (defun common-lisp-sly/init-sly ()
   (use-package sly
     :defer t
-    :init
+    :config
     (spacemacs/register-repl 'sly 'sly)
     (setq sly-autodoc-use-multiline t
           sly-complete-symbol*-fancy t
