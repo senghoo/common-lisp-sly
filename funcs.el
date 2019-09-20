@@ -33,3 +33,12 @@
   ("s" sly-stickers-next-sticker)
   ("S" sly-stickers-prev-sticker)
   ("q" nil :exit t)))
+
+(defun spacemacs/sly-repl-new-input ()
+  (interactive)
+  (cond ((not (eq (point-max) (max 0 (sly-mrepl--mark))))
+         (sly-mrepl-return))
+        ((not (eq (point-max) (point)))
+         (goto-char (point-max))
+         (evil-insert 1))
+        (t (evil-insert 1))))

@@ -136,7 +136,8 @@
           ("<up>" . sly-mrepl-previous-input-or-button)
           ("<down>" . sly-mrepl-next-input-or-button)
           ("<C-up>" . sly-mrepl-previous-input-or-button)
-          ("<C-down>" . sly-mrepl-next-input-or-button))))
+          ("<C-down>" . sly-mrepl-next-input-or-button)
+          ("<return>" . spacemacs/sly-repl-new-input))))
 
 (defun common-lisp-sly/post-init-company ()
   (spacemacs|add-company-backends
